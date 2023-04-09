@@ -27,7 +27,5 @@ function prompt {
   return "> "
 }
 
-function wsl_home {
-  wsl.exe --cd ~
-}
-New-Alias wslh wsl_home
+function wsl_home { wsl.exe --cd ~ }
+New-Alias -Name wslh -Value wsl_home -Description "Run wsl in home directory"
