@@ -7,7 +7,7 @@ function Write-BranchName () {
           Write-Host " ($branch)" -ForegroundColor "red"
       }
       else {
-        Write-Host " ($branch)" -ForegroundColor "blue"
+        Write-Host " ($branch)" -ForegroundColor "cyan"
       }
   } catch {
     Write-Host " (no branches yet)" -ForegroundColor "yellow"
