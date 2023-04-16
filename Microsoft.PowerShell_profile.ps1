@@ -28,8 +28,4 @@ function prompt {
 }
 
 Set-PSReadLineOption -BellStyle None
-
-function wsl_home { wsl.exe --cd ~ }
-New-Alias -Name wslh -Value wsl_home -Description "Run wsl in home directory"
-
 Set-PSReadLineKeyHandler -Chord "Tab" -Function MenuComplete
