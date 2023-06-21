@@ -29,6 +29,7 @@ function prompt {
 
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord "Tab" -Function MenuComplete
+Set-PSReadLineKeyHandler -Chord "Ctrl+j" -Function AcceptSuggestion
 
 Remove-Alias -Name nv -Force
 New-Alias -Name nv -Value nvim
