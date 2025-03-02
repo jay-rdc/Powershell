@@ -1,3 +1,4 @@
+# FUNCTIONS
 function Write-BranchName () {
   try {
     $branch = git rev-parse --abbrev-ref HEAD
@@ -27,12 +28,14 @@ function prompt {
   return "> "
 }
 
+# ENVIRONMENT VARIABLES
 $env:nvimdir = "$env:LOCALAPPDATA\nvim"
 $NVIM_DIR = "$env:nvimdir"
 
 $env:histfile = "$((Get-PSReadlineOption).HistorySavePath)"
 $HISTFILE = "$env:histfile"
 
+# KEYBOARD SHORTCUT REMAPS
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord "Tab" -Function MenuComplete
 Set-PSReadLineKeyHandler -Chord "Ctrl+j" -Function AcceptSuggestion
@@ -40,5 +43,6 @@ Set-PSReadLineKeyHandler -Key "Ctrl+u" -Function RevertLine
 Set-PSReadLineKeyHandler -Key "Ctrl+p" -Function PreviousHistory
 Set-PSReadLineKeyHandler -Key "Ctrl+n" -Function NextHistory
 
+# ALIASES
 Remove-Alias -Name nv -Force
 New-Alias -Name nv -Value nvim
