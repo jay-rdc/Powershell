@@ -27,6 +27,12 @@ function prompt {
   return "> "
 }
 
+$env:nvimdir = "$env:LOCALAPPDATA\nvim"
+$NVIM_DIR = "$env:nvimdir"
+
+$env:histfile = "$((Get-PSReadlineOption).HistorySavePath)"
+$HISTFILE = "$env:histfile"
+
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord "Tab" -Function MenuComplete
 Set-PSReadLineKeyHandler -Chord "Ctrl+j" -Function AcceptSuggestion
