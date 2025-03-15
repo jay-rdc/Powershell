@@ -35,13 +35,15 @@ $NVIM_DIR = "$env:nvimdir"
 $env:histfile = "$((Get-PSReadlineOption).HistorySavePath)"
 $HISTFILE = "$env:histfile"
 
-# KEYBOARD SHORTCUT REMAPS
+# KEYBOARD SHORTCUTS
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord "Tab" -Function MenuComplete
 Set-PSReadLineKeyHandler -Chord "Ctrl+j" -Function AcceptSuggestion
 Set-PSReadLineKeyHandler -Key "Ctrl+u" -Function RevertLine
 Set-PSReadLineKeyHandler -Key "Ctrl+p" -Function PreviousHistory
 Set-PSReadLineKeyHandler -Key "Ctrl+n" -Function NextHistory
+
+Remove-PSReadLineKeyHandler -Key "Ctrl+v"
 
 # ALIASES
 Remove-Alias -Name nv -Force
