@@ -35,6 +35,9 @@ $NVIM_DIR = "$env:nvimdir"
 $env:histfile = "$((Get-PSReadlineOption).HistorySavePath)"
 $HISTFILE = "$env:histfile"
 
+$env:fzf_default_opts = "--height 40% --layout reverse"
+$FZF_DEFAULT_OPTS = "$env:fzf_default_opts"
+
 # KEYBOARD SHORTCUTS
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord "Tab" -Function MenuComplete
