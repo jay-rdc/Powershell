@@ -28,6 +28,13 @@ function prompt {
   return "> "
 }
 
+function fp {
+  $path = $(fd . $HOME/projects -td | fzf)
+  if (Test-Path $path) {
+    cd $path
+  }
+}
+
 # ENVIRONMENT VARIABLES
 $env:nvimdir = "$env:LOCALAPPDATA\nvim"
 $NVIM_DIR = "$env:nvimdir"
